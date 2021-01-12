@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background-color:  #ffe2be;
+  color: #ff6600;
+}
+:root {
+  --space-lg: 1.5rem;
+  --space: 1rem;
+  --space-sm: 0.75rem;
+  --space-xs: 0.5rem;
+
+  --max-width: 1280px;
+
+  --primary-color: #ff8800;
+  --primary-color-alt: #ff6600;
+  --gray: #ededed;
+  --bg-color: #fff;
+  --color-gray-light: #f9f9f9;
+  --text-color: #555;
+  --border-radius: 10px;
+  --border-width: 2px;
+
+  --text-xl: 6rem;
+  --text-lg: 2rem;
+  --text-action: 1.1rem;
+  --text-base: 1rem;
+  --text-sm: 0.85rem;
+
+  --letter-spacing: -0.04em;
+
+  --transition: 0.24s ease-in-out;
+}
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+@media only screen and (max-width: 1280px) {
+  #App {
+    margin: auto var(--space);
+  }
+}
+
+
+
+main {
+  max-width: var(--max-width);
+  margin: auto;
+  
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing);
+  font-size: var(--text-xl);
+}
+
+button,
+input,
+select,
+textarea {
+  border: 0;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--border-radius);
+  font-size: var(--text-base);
+  display: block;
+  font-weight: 100;
+  color: var(--text-color);
+  &.active, &.button--primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  &:hover , &:focus, &:active {
+    outline-style: dotted;
+    outline-width: var(--border-width);
+    outline-offset: var(--space-xs);
+    outline-color: var(--gray);
+    opacity: .8;
+    // background-color: var(--color-gray-light);
+  }
+}
+button {
+  cursor: pointer;
+}
+.badge {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  background-color: var(--gray);
+  // display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  img { margin-left: var(--space-xs);}
+  
+  &.active,
+  &.primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+}

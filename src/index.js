@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import DataProvider from './contexts/DataContext';
+import UserProvider from './contexts/UserContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UserProvider>
+      <DataProvider>
+        <App />
+      </DataProvider>
+    </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

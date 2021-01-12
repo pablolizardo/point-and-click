@@ -1,0 +1,22 @@
+nav {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    div{
+        display: flex;
+        align-items: center;
+        gap: var(--space);
+        &:last-child {
+            justify-content: flex-end;
+        }
+    }
+    .badge img  {
+        width: 20px;
+        height: 20px;
+      }
+  }
