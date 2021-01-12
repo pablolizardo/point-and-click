@@ -1,3 +1,4 @@
+import React from 'react'
 import { useContext } from 'react';
 import { DataContext } from './contexts/DataContext'
 import { UserContext } from './contexts/UserContext';
@@ -8,20 +9,19 @@ import Aside from './components/Aside';
 
 function App() {
   const { products } = useContext(DataContext)
-  const { user } = useContext(UserContext)
-  if (!products) return 'Loading...'
+  const { user, history } = useContext(UserContext)
+  if (!products || !user || !history ) return 'Loading...'
   return (
     <div id='App'>
-      <Nav user={user}/>
+      <Nav user={user} history={history}/>
       <Header />
       <main>
         <Aside products={products}/>
         <section className='products'>
           {products.map(product => <Product 
-          product={product} 
-          userPoints={user.points}
-          key={product._id}
-
+            product={product} 
+            userPoints={user.points}
+            key={product._id}
           /> )}
         </section>
       </main>
