@@ -20,7 +20,7 @@
   --gray: #ededed;
   --bg-color: #fff;
   --color-gray-light: #f9f9f9;
-  --text-color: #555;
+  --text-color: #444;
   --border-radius: 10px;
   --border-width: 2px;
 
@@ -30,25 +30,51 @@
   --text-base: 1rem;
   --text-sm: 0.85rem;
 
-  --letter-spacing: -0.04em;
+  --letter-spacing: -0.09em;
 
   --transition: 0.24s ease-in-out;
 }
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.65;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 15px;
-  line-height: 1.4;
+  font-weight: 400;
   color: var(--text-color);
   background-color: var(--bg-color);
 }
-
+body {
+  font-feature-settings: 'kern';
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-scroll-behavior: smooth;
+    -moz-scroll-behavior: smooth;
+    -ms-scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
 @media only screen and (max-width: 1280px) {
   #App {
     margin: auto var(--space);
   }
 }
-
+#big-kite{
+  position: fixed;
+  z-index: 2;
+  bottom: -80px;
+  right: 50px;
+  margin : auto;
+  animation : 20s kite infinite;
+  pointer-events: none;
+  opacity: .5;
+}
+@keyframes kite {
+  from {
+    bottom: -80px;
+  }
+  to {
+    bottom: -50px;
+  }
+}
 
 
 main {
@@ -71,8 +97,8 @@ textarea {
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--border-radius);
   font-size: var(--text-base);
-  display: block;
-  font-weight: 100;
+    background-color: var(--gray);
+    display: block;
   color: var(--text-color);
   &.active, &.button--primary {
     background-color: var(--primary-color);
@@ -87,6 +113,9 @@ textarea {
     // background-color: var(--color-gray-light);
   }
 }
+
+
+
 button {
   cursor: pointer;
 }

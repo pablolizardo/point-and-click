@@ -1,16 +1,15 @@
 import React from 'react'
 import './Aside.scss'
 
-function Aside({ products }) {
+function Aside({ products, filter, setFilter }) {
     return (
         <aside>
-            <span>{products.length} of {products.length} products </span>
+            <span>Showing <strong>{products.length}</strong> of <strong>{products.length}</strong> products </span>
             <span className='separator'></span>
             <span> Sort by: </span>
-            <button className='active'>Most recent</button>
-            <button>Lowest price</button>
-            <button>Highest price</button>
-            <button>▶</button>
+            <button onClick={() => setFilter('name')} className={filter === 'name' && 'active'}>Name</button>
+            <button onClick={() => setFilter('cost')} className={filter === 'cost' && 'active'}>Price</button>
+            <button>→</button>
         </aside>
     )
 }

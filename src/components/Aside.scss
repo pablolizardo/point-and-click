@@ -1,13 +1,28 @@
-
 aside {
-    padding: var(--space-xs) 0;
-    display: flex;
-    justify-content: flex-start;
-    gap: var(--space);
-    align-items: center;
-    margin-bottom: var(--space);
+  padding: var(--space-xs) 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--space);
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: var(--space);
+  .separator{ 
+    border-right: var(--border-width) solid var(--gray);
+    height: 30px;
+    margin : 0 var(--space);
+    display: block;
+    width: 2px;
+  }
+  button:last-child {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 508px) {
+  aside {
+    // flex-direction: column;
     button:last-child {
-      margin-left: auto;
+      margin-left: 0;
     }
   }
-  
+}

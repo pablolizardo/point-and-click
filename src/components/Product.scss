@@ -31,9 +31,11 @@
     justify-content: center;
     align-items: center;
     transition: var(--transition);
-    background-color: var(--gray);
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.14);
     color: var(--text-color);
     width: max-content;
+    text-overflow: hidden;
     padding : var(--space-sm);
     height: 32px;
     .product__remain{
@@ -90,7 +92,6 @@
     background : white;
     display: block;
     opacity: 0;
-    // backdrop-filter: blur(4px);
     z-index: 1;
     transition:  var(--transition);
     content: ' ';
@@ -107,18 +108,18 @@
 
 @media only screen and (max-width: 1080px) {
   .products {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .products {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (max-width: 414px) {
   .products {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }

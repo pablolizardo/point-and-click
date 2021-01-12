@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  margin: calc(var(--space-lg) * 5);
+  opacity: 0.6;
+  text-align: center;
+  gap: var(--space);
+  img {
+    filter: grayscale(100%);
+  }
+}
