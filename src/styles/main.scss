@@ -21,6 +21,7 @@
   --bg-color: #fff;
   --color-gray-light: #f9f9f9;
   --text-color: #444;
+  --border-radius-sm: 5px;
   --border-radius: 10px;
   --border-width: 2px;
 
@@ -94,8 +95,8 @@ input,
 select,
 textarea {
   border: 0;
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--border-radius);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius-sm);
   font-size: var(--text-base);
     background-color: var(--gray);
     display: block;
@@ -110,7 +111,12 @@ textarea {
     outline-offset: var(--space-xs);
     outline-color: var(--gray);
     opacity: .8;
-    // background-color: var(--color-gray-light);
+  }
+  &[disabled]{
+    opacity: .4;
+    &:hover , &:focus, &:active {
+      outline-width: 0;
+    }
   }
 }
 
@@ -121,9 +127,8 @@ button {
 }
 .badge {
   padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-sm);
   background-color: var(--gray);
-  // display: inline-block;
   display: inline-flex;
   align-items: center;
   img { margin-left: var(--space-xs);}

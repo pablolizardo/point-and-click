@@ -13,9 +13,14 @@ aside {
     display: block;
     width: 2px;
   }
-  button:last-child {
+  .aside__buttons{
     margin-left: auto;
+    display: flex;
+    button {
+      margin:auto var(--space-xs) ;
+    }
   }
+
 }
 
 @media only screen and (max-width: 508px) {
